@@ -24,8 +24,10 @@ struct ContentView: View {
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode(FriendFaces.self, from: data) {
-                    
+                if let decodedResponse = try? JSONDecoder().decode([FriendFaces].self, from: data) {
+                    DispatchQueue.main.async {
+                        self.friend = decodedResponse
+                    }
                 }
             }
         }
