@@ -11,6 +11,7 @@
 		7BB9F932274253B500FD8734 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9F931274253B500FD8734 /* ContentView.swift */; };
 		7BB9F934274253B600FD8734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB9F933274253B600FD8734 /* Assets.xcassets */; };
 		7BB9F937274253B600FD8734 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB9F936274253B600FD8734 /* Preview Assets.xcassets */; };
+		7BB9F93E2742556F00FD8734 /* FriendFaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB9F93D2742556F00FD8734 /* FriendFaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		7BB9F931274253B500FD8734 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7BB9F933274253B600FD8734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BB9F936274253B600FD8734 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7BB9F93D2742556F00FD8734 /* FriendFaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				7BB9F92F274253B500FD8734 /* MilestoneProject_10_12App.swift */,
 				7BB9F931274253B500FD8734 /* ContentView.swift */,
+				7BB9F93D2742556F00FD8734 /* FriendFaces.swift */,
 				7BB9F933274253B600FD8734 /* Assets.xcassets */,
 				7BB9F935274253B600FD8734 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB9F932274253B500FD8734 /* ContentView.swift in Sources */,
+				7BB9F93E2742556F00FD8734 /* FriendFaces.swift in Sources */,
 				7BB9F930274253B500FD8734 /* MilestoneProject_10_12App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
