@@ -15,7 +15,7 @@ struct ContentView: View {
             .padding()
     }
     
-    func loadData() {
+    mutating func loadData() {
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")  else {
             print("Invalid url")
             return
