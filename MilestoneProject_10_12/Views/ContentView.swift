@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var friends = [FriendFaces]()
     var body: some View {
         Text("Hello, world!")
             .padding()
