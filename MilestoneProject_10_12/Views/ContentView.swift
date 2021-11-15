@@ -12,6 +12,13 @@ struct ContentView: View {
         Text("Hello, world!")
             .padding()
     }
+    
+    func loadData() {
+        guard let url = "https://www.hackingwithswift.com/samples/friendface.json" else {
+            print("Invalid url")
+            return
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

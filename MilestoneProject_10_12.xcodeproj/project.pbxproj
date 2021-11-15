@@ -37,6 +37,8 @@
 		7BB9F923274253B500FD8734 = {
 			isa = PBXGroup;
 			children = (
+				7BB9F92F274253B500FD8734 /* MilestoneProject_10_12App.swift */,
+				7BB9F93F2742563100FD8734 /* Supported Files */,
 				7BB9F92E274253B500FD8734 /* MilestoneProject_10_12 */,
 				7BB9F92D274253B500FD8734 /* Products */,
 			);
@@ -54,10 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB9F9412742565400FD8734 /* Model */,
-				7BB9F93F2742563100FD8734 /* Supported Files */,
 				7BB9F9402742563D00FD8734 /* Views */,
-				7BB9F92F274253B500FD8734 /* MilestoneProject_10_12App.swift */,
-				7BB9F93D2742556F00FD8734 /* FriendFaces.swift */,
 				7BB9F933274253B600FD8734 /* Assets.xcassets */,
 				7BB9F935274253B600FD8734 /* Preview Content */,
 			);
@@ -90,6 +89,7 @@
 		7BB9F9412742565400FD8734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BB9F93D2742556F00FD8734 /* FriendFaces.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
