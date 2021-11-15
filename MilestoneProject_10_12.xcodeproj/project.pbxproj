@@ -53,8 +53,10 @@
 		7BB9F92E274253B500FD8734 /* MilestoneProject_10_12 */ = {
 			isa = PBXGroup;
 			children = (
+				7BB9F9412742565400FD8734 /* Model */,
+				7BB9F93F2742563100FD8734 /* Supported Files */,
+				7BB9F9402742563D00FD8734 /* Views */,
 				7BB9F92F274253B500FD8734 /* MilestoneProject_10_12App.swift */,
-				7BB9F931274253B500FD8734 /* ContentView.swift */,
 				7BB9F93D2742556F00FD8734 /* FriendFaces.swift */,
 				7BB9F933274253B600FD8734 /* Assets.xcassets */,
 				7BB9F935274253B600FD8734 /* Preview Content */,
@@ -68,6 +70,28 @@
 				7BB9F936274253B600FD8734 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7BB9F93F2742563100FD8734 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supported Files";
+			sourceTree = "<group>";
+		};
+		7BB9F9402742563D00FD8734 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BB9F931274253B500FD8734 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7BB9F9412742565400FD8734 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
