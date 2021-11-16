@@ -42,6 +42,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(user: User(id: "111", isActive: false, name: "Giovanni",
+                                age: 31, company: "openClassrooms", email: "gaffejonathan@ymail.com",
+                                address: "myAdress", about: "Rien", registered: Date(),
+                                tags: [], friends: []))
     }
 }
