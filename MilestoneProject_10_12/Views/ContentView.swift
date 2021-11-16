@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    var friends = [FriendFaces]()
+    @State var users: User?
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
     
-    mutating func loadData() {
+    func loadData() {
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")  else {
             print("Invalid url")
             return
