@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @State var users: User?
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        VStack {
+            Text("\(users?.name ?? "No name")")
+        }
+        .onAppear(perform: loadData)
     }
+        
     
     func loadData() {
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")  else {
