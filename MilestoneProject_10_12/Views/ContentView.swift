@@ -29,7 +29,8 @@ struct ContentView: View {
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(User.self, from: data) {
                     DispatchQueue.main.async {
-                        self.friend = decodedResponse
+                        print(decodedResponse)
+                        self.users = decodedResponse
                     }
                 }
             }
