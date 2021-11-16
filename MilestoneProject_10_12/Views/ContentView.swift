@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var users: User?
+    @State var user: User?
     var body: some View {
         
         VStack {
-            Text("\(users?.name ?? "No name")")
+            Text("\(user?.name ?? "No name")")
         }
         .onAppear(perform: loadData)
     }
@@ -30,8 +30,9 @@ struct ContentView: View {
                 if let decodedResponse = try? JSONDecoder().decode(User.self, from: data) {
                     DispatchQueue.main.async {
                         print(decodedResponse)
-                        self.users = decodedResponse
+                        self.user = decodedResponse
                     }
+                    return
                 }
             }
         }
