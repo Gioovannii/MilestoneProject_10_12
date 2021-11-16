@@ -35,8 +35,8 @@ struct ContentView: View {
                     return
                 }
             }
-        }
-        
+            print("Fetch failed \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
     }
 }
 
