@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var user: User?
+    
+    @State var users = [User]()
+    
     var body: some View {
         
         VStack {
