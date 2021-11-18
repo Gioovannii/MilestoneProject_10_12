@@ -15,9 +15,10 @@ struct User: Codable, Identifiable {
     let name: String
     let age: Int
     let company, email, address, about: String
-    let registered: Date
+    let registered: String
     let tags: [String]
     let friends: [Friend]
+
 }
 
 // MARK: - Friend
