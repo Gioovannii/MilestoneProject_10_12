@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct DetailView: View {
-    let user: User
+    @ObservedObject var detailViewModel: DetailViewModel
     
     var body: some View {
         ZStack {
             NavigationView {
                 VStack {
-                    Text("This is a detail view from \(user.name)")
+                    Text("I work for \(detailViewModel.user.company)")
+                    Text("My e-mail is \(detailViewModel.user.email)")
+                    Text("My address is \(detailViewModel.user.address)")
+                    Text("I registered  \(detailViewModel.user.registered)")
+
+                    Text("A small description of me \(detailViewModel.user.about)")
+
                     
                 }
             }
-            .navigationTitle(user.name)
+            .navigationTitle(detailViewModel.user.name)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -26,6 +32,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(user: User.dummyUser)
+        DetailView(detailViewModel: DetailViewModel(user: User.dummyUser))
     }
 }
