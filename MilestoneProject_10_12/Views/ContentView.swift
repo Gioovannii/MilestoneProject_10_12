@@ -12,13 +12,13 @@ struct ContentView: View {
     @State var users = [User]()
     
     var body: some View {
-        
-        VStack {
-            Text("\(user?.name ?? "No name")")
+        List(users, id: \.id) { user in
+            
+            Text("\(user.name)")
         }
         .onAppear(perform: loadData)
     }
-        
+    
     
     func loadData() {
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")  else {
