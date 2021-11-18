@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - FacesJSONElement
 
-struct User: Codable {
+struct User: Codable, Identifiable {
     let id: String
     let isActive: Bool
     let name: String
