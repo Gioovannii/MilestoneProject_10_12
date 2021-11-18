@@ -11,8 +11,16 @@ struct DetailView: View {
     let user: User
     
     var body: some View {
-        
-        Text("Hello, World!")
+        ZStack {
+            NavigationView {
+                VStack {
+                    Text("This is a detail view from \(user.name)")
+                    
+                }
+            }
+            .navigationTitle(user.name)
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
