@@ -25,3 +25,14 @@ struct User: Codable, Identifiable {
 struct Friend: Codable {
     let id, name: String
 }
+
+
+extension User {
+    static let dummyUser = User(
+        id: UUID().uuidString, isActive: true,
+        name: "Giovanni", age: 31,
+        company: "No company", email: "gaffejonathan@ymail.com",
+        address: "Homeless", about: "Nothing about",
+        registered: "The date", tags: ["one", "two", "three"],
+        friends: [])
+}
