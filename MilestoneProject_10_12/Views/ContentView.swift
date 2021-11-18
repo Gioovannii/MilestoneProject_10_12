@@ -29,7 +29,7 @@ struct ContentView: View {
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode(User.self, from: data) {
+                if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
                     DispatchQueue.main.async {
                         print(decodedResponse)
                         self.user = decodedResponse
@@ -44,9 +44,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(user: User(id: "111", isActive: false, name: "Giovanni",
-                                age: 31, company: "openClassrooms", email: "gaffejonathan@ymail.com",
-                                address: "myAdress", about: "Rien", registered: Date(),
-                                tags: [], friends: []))
+        ContentView()
     }
 }
