@@ -12,11 +12,18 @@ struct ContentView: View {
     @State var users = [User]()
     
     var body: some View {
-        List(users, id: \.id) { user in
+        NavigationView {
+            List(users, id: \.id) { user in
+                HStack {
+                    Text(user.name)
+                    Spacer()
+                    Text("\(user.age) ans")
+                }
+            }
+            .navigationTitle("User List")
+            .onAppear(perform: loadData)
             
-            Text("\(user.name)")
         }
-        .onAppear(perform: loadData)
     }
     
     
