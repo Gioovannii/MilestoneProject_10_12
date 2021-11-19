@@ -10,46 +10,53 @@ import SwiftUI
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: DetailViewModel
-    
+
     var body: some View {
         
         let user = viewModel.user
         Form {
+            
             HStack {
-                Text("I work for")
+                Text("I work for :")
                     .fontWeight(.semibold)
                 Text(user.company)
             }
             HStack {
-                Text("My e-mail is")
+                Text("My e-mail is :")
                     .fontWeight(.semibold)
                 Text(user.email)
             }
             
             HStack {
-                Text("My address is")
+                Text("My address is :")
                     .fontWeight(.semibold)
                 Text(user.address)
             }
             
             HStack {
-                Text("I registered")
+                Text("I registered the :")
                     .fontWeight(.semibold)
                 Text(user.registered)
             }
             HStack {
                 Text("My friends :")
                     .fontWeight(.semibold)
-                Text(getFriends())
             }
+                ForEach(user.friends, id: \.id) { friend in
+                    NavigationLink(destination: FriendDetailsView(viewModel: FriendViewModel(friend: friend))) {
+                        Text("\(friend.name)")
+                            .foregroundColor(.accentColor)
+                    }
+                }
+            
             HStack {
-                Text("Here is my tags ")
+                Text("Here is my tags :")
                     .fontWeight(.semibold)
                 Text(user.tags.joined(separator: ", "))
             }
             
             VStack {
-                Text("A small description of me")
+                Text("A small description of me :")
                     .font(.headline)
                 Text(user.about)
                     .padding()
