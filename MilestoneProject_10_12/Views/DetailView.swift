@@ -17,14 +17,23 @@ struct DetailView: View {
                 
                 let user = detailViewModel.user
                 VStack {
-                    Text("I work for \(detailViewModel.user.company)")
-                    Text("My e-mail is \(detailViewModel.user.email)")
-                    Text("My address is \(detailViewModel.user.address)")
-                    Text("I registered  \(detailViewModel.user.registered)")
-
-                    Text("A small description of me \(detailViewModel.user.about)")
-
                     
+                    Text("I work for \(user.company)")
+                    Text("My e-mail is \(user.email)")
+                    Text("My address is \(user.address)")
+                    Text("I registered  \(user.registered)")
+                    
+                    Text(detailViewModel.user.tags.joined(separator: ", "))
+                        .padding()
+                    
+                    VStack {
+                        Text("A small description of me \(user.about)")
+                            .font(.headline)
+                        Text(user.about)
+                            .padding()
+                            .background(Color.green)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
                 }
             }
             .navigationTitle(detailViewModel.user.name)
