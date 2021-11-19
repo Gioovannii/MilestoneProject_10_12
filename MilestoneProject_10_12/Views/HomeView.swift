@@ -15,11 +15,7 @@ struct HomeView: View {
             List(viewModel.users, id: \.id) { user in
                 NavigationLink(destination: DetailView(
                     viewModel: DetailViewModel(user: user))) {
-                        HStack {
-                            Text(user.name)
-                            Spacer()
-                            Text("\(user.age) ans")
-                        }
+                        HomeViewCell(name: user.name, age: user.age)
                     }
             }
             .navigationTitle("User List")
