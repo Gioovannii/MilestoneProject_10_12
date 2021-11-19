@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var detailViewModel: DetailViewModel
     
     var body: some View {
