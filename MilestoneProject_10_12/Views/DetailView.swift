@@ -39,7 +39,7 @@ struct DetailView: View {
             Section(header: Text("Work").fontWeight(.semibold)) {
                 Text("\(user.company)©️")
             }
-        
+            
             Section(header: Text("My friends :")
                         .fontWeight(.semibold)) {
                 
@@ -67,6 +67,11 @@ struct DetailView: View {
         }
         .font(.body)
         .navigationTitle(viewModel.user.name)
+        .onAppear(perform: changeBackground)
+    }
+    
+    func changeBackground() {
+        UITableView.appearance().backgroundColor = .clear
     }
 }
 
