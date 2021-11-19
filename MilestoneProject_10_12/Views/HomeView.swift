@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var homeViewModel = HomeViewModel()
+    @ObservedObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationView {
-            List(homeViewModel.users, id: \.id) { user in
+            List(viewModel.users, id: \.id) { user in
                 NavigationLink(destination: DetailView(
-                    detailViewModel: DetailViewModel(user: user))) {
+                    viewModel: DetailViewModel(user: user))) {
                         HStack {
                             Text(user.name)
                             Spacer()
@@ -23,7 +23,7 @@ struct HomeView: View {
                     }
             }
             .navigationTitle("User List")
-            .onAppear(perform: homeViewModel.loadData)
+            .onAppear(perform: viewModel.loadData)
         }
     }
 }

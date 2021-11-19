@@ -9,13 +9,13 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var detailViewModel: DetailViewModel
+    @ObservedObject var viewModel: DetailViewModel
     
     var body: some View {
         ZStack {
             NavigationView {
                 
-                let user = detailViewModel.user
+                let user = viewModel.user
                 VStack {
                     
                     Text("I work for \(user.company)")
@@ -23,7 +23,7 @@ struct DetailView: View {
                     Text("My address is \(user.address)")
                     Text("I registered  \(user.registered)")
                     
-                    Text(detailViewModel.user.tags.joined(separator: ", "))
+                    Text(viewModel.user.tags.joined(separator: ", "))
                         .padding()
                     
                     VStack {
@@ -36,7 +36,7 @@ struct DetailView: View {
                     }
                 }
             }
-            .navigationTitle(detailViewModel.user.name)
+            .navigationTitle(viewModel.user.name)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -44,6 +44,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(detailViewModel: DetailViewModel(user: User.dummyUser))
+        DetailView(viewModel: DetailViewModel(user: User.dummyUser))
     }
 }
