@@ -8,9 +8,9 @@
 import Foundation
 
 class FriendViewModel: ObservableObject {
-    @Published var user: User
+    @Published var friend: Friend
     
-    init(user: User) {
-        self.user = user
+    init(friend: Friend) {
+        self.friend = friend
     }
 }
