@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: DetailViewModel
-
+    
     var body: some View {
         
         let user = viewModel.user
@@ -36,18 +36,19 @@ struct DetailView: View {
             HStack {
                 Text("I registered the :")
                     .fontWeight(.semibold)
-                Text(user.registered)
+                Text(String().convertDateFormat(inputDate: user.registered))
             }
             HStack {
                 Text("My friends :")
                     .fontWeight(.semibold)
             }
-                ForEach(user.friends, id: \.id) { friend in
-                    NavigationLink(destination: FriendDetailsView(viewModel: FriendViewModel(friend: friend))) {
-                        Text("\(friend.name)")
-                            .foregroundColor(.accentColor)
-                    }
+            
+            ForEach(user.friends, id: \.id) { friend in
+                NavigationLink(destination: FriendDetailsView(viewModel: FriendViewModel(friend: friend))) {
+                    Text("\(friend.name)")
+                        .foregroundColor(.accentColor)
                 }
+            }
             
             HStack {
                 Text("Here is my tags :")
@@ -66,15 +67,6 @@ struct DetailView: View {
         }
         .font(.body)
         .navigationTitle(viewModel.user.name)
-    }
-    
-    func getFriends() -> String {
-        var friends = [String]()
-        
-        for user in viewModel.user.friends {
-            friends.append(user.name)
-        }
-        return friends.joined(separator: ", ")
     }
 }
 

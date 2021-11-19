@@ -15,7 +15,7 @@ struct HomeViewCell: View {
         HStack {
             Text(name)
             Spacer()
-            Text("\(age) ans")
+            Text("\(age) years old")
         }
     }
 }
