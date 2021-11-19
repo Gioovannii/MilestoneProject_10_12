@@ -14,6 +14,8 @@ struct DetailView: View {
     var body: some View {
         ZStack {
             NavigationView {
+                
+                let user = detailViewModel.user
                 VStack {
                     Text("I work for \(detailViewModel.user.company)")
                     Text("My e-mail is \(detailViewModel.user.email)")
