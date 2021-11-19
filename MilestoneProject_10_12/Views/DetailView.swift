@@ -16,43 +16,43 @@ struct DetailView: View {
         let user = viewModel.user
         Form {
             
-            HStack {
-                Text("I work for :")
-                    .fontWeight(.semibold)
-                Text(user.company)
-            }
-            HStack {
-                Text("My e-mail is :")
-                    .fontWeight(.semibold)
-                Text(user.email)
-            }
-            
-            HStack {
-                Text("My address is :")
-                    .fontWeight(.semibold)
-                Text(user.address)
-            }
-            
-            HStack {
-                Text("I registered the :")
-                    .fontWeight(.semibold)
-                Text(String().convertDateFormat(inputDate: user.registered))
-            }
-            HStack {
-                Text("My friends :")
-                    .fontWeight(.semibold)
-            }
-            
-            ForEach(user.friends, id: \.id) { friend in
-                NavigationLink(destination: FriendDetailsView(viewModel: FriendViewModel(friend: friend))) {
-                    Text("\(friend.name)")
-                        .foregroundColor(.accentColor)
+            Section(header: Text("Informations")) {
+                HStack {
+                    Text("My e-mail is :")
+                        .fontWeight(.semibold)
+                    Text(user.email)
+                }
+                
+                HStack {
+                    Text("My address is :")
+                        .fontWeight(.semibold)
+                    Text(user.address)
+                }
+                
+                HStack {
+                    Text("I registered the :")
+                        .fontWeight(.semibold)
+                    Text(String().convertDateFormat(inputDate: user.registered))
                 }
             }
             
-            HStack {
-                Text("Here is my tags :")
-                    .fontWeight(.semibold)
+            Section(header: Text("Work").fontWeight(.semibold)) {
+                Text("\(user.company)©️")
+            }
+        
+            Section(header: Text("My friends :")
+                        .fontWeight(.semibold)) {
+                
+                ForEach(user.friends, id: \.id) { friend in
+                    NavigationLink(destination: FriendDetailsView(viewModel: FriendViewModel(friend: friend))) {
+                        Text("\(friend.name)")
+                            .foregroundColor(.accentColor)
+                    }
+                }
+            }
+            
+            Section(header: Text("Here is my tags :").fontWeight(.semibold)) {
+                
                 Text(user.tags.joined(separator: ", "))
             }
             
