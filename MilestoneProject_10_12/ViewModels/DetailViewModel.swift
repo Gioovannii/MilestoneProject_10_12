@@ -8,8 +8,7 @@
 import Foundation
 
 class DetailViewModel: ObservableObject {
-    @Published var user: User
-    
+    @Published var user: UserRepresentable
     
     /// Get all friends
     /// - Returns: All friends in one line
@@ -22,7 +21,7 @@ class DetailViewModel: ObservableObject {
         return friends.joined(separator: ", ")
     }
     
-    init(user: User) {
+    init(user: UserRepresentable) {
         self.user = user
     }
 }
