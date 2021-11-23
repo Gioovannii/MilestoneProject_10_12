@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var users = [User]()
+    @Published var users = [UserRepresentable]()
     
     func loadData() {
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
@@ -19,7 +19,7 @@ class HomeViewModel: ObservableObject {
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
+                if let decodedResponse = try? JSONDecoder().decode([UserRepresentable].self, from: data) {
                     DispatchQueue.main.async {
                         self.users = decodedResponse
                         
