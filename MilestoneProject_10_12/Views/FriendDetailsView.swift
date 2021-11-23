@@ -17,6 +17,6 @@ struct FriendDetailsView: View {
 
 struct FriendDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailsView(viewModel: FriendViewModel(friend: User.dummyUser.friends.first!))
+        FriendDetailsView(viewModel: FriendViewModel(friend: UserRepresentable.dummyUser.friends.first!))
     }
 }
